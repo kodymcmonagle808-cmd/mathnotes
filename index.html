@@ -26,7 +26,7 @@
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
 
 <script>
-  // Firebase config (replace with your own if needed)
+  // Firebase config
   const firebaseConfig = {
     apiKey: "AIzaSyBigh36k4MZ2ilfTe9LkaNzMlJOV1rrEjw",
     authDomain: "math-notes-e367f.firebaseapp.com",
@@ -46,7 +46,7 @@
   const chatBox = document.getElementById('chatBox');
   const messageInput = document.getElementById('messageInput');
 
-  // Bad words filter
+  // Simple bad words filter
   const badWords = ["badword1","badword2","badword3"];
   function filterMessage(msg){
     let filtered = msg;
@@ -57,7 +57,7 @@
     return filtered;
   }
 
-  // Load messages
+  // Load messages in real time
   chatRef.on('child_added', snapshot => {
     const msg = snapshot.val();
     const div = document.createElement('div');
